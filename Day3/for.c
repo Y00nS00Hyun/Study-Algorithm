@@ -20,7 +20,7 @@ int main()
     }
     else
     {
-        printf("바보");
+        printf("바보!");
     }
     return 0;
 }
