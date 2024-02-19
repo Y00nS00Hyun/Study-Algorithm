@@ -12,6 +12,15 @@ int main()
         scanf("%d", &score);
         sum = sum + score;
     }
-    printf("평균 점수: %d", sum / subject);
+    printf("평균 점수: %d\n", sum / subject);
+
+    if (sum / subject > 90)
+    {
+        printf("천재!");
+    }
+    else
+    {
+        printf("바보");
+    }
     return 0;
 }
