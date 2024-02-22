@@ -15,7 +15,14 @@ int main()
     {
         for (b = 1; a + b < 2000; b++)
         {
-            count++;
+            if (a > b)
+            {
+                c = 2000 - a - b;
+                if (b > c)
+                {
+                    count++;
+                }
+            }
         }
     }
     printf("%d", count);
