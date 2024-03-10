@@ -4,25 +4,35 @@
 int main(void)
 {
     char arr[1000000];
-    int count = 0;
-    int i, length;
+    int i, count = 0;
 
-    scanf("%[^\n]", arr);
-    length = strlen(arr);
-
-    if (length == 1)
+    for (i = 0; i < 1000000; i++)
     {
-        if (arr[0] == ' ')
-            printf("0\n");
-        return 0;
+        arr[i] = 'a';
     }
 
-    for (i = 1; i < length; i++)
+    gets(arr);
+
+    for (i = 0; i < 1000000; i++)
     {
         if (arr[i] == ' ')
+        {
             count++;
+        }
     }
 
-    printf("%d", count + 1);
-    return 0;
+    int end = strlen(arr) - 1;
+
+    if (arr[0] == ' ' && arr[end] == ' ')
+    {
+        printf("%d", count - 1);
+    }
+    else if (arr[0] == ' ' || arr[end] == ' ')
+    {
+        printf("%d", count);
+    }
+    else
+    {
+        printf("%d", count + 1);
+    }
 }
