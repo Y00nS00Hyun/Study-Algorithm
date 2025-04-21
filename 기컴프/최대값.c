@@ -4,7 +4,7 @@ int main(void)
 {
     int a, b, c;
     int max;
-
+    printf("정수 3개를 입력하세요:");
     scanf("%d %d %d", &a, &b, &c);
 
     if (a > b)
