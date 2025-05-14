@@ -24,7 +24,7 @@ int main(void)
         }
     }
 
-    int max = alphabet[0];
+    int max = 0;
     int answer;
     int duplication = 0;
 
