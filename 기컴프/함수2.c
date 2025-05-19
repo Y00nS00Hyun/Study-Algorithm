@@ -18,5 +18,5 @@ int main()
 
 double ondo(double c)
 {
-    return (9.0 / 5.0) * c + 32;
+    return (9.0 / 5.0) * c + 32; // 9/5 라고 쓰면 안됨 -> 1로 간주
 }
