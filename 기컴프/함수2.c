@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+double ondo(double c);
+
+int main()
+{
+    double c, f;
+
+    printf("섭씨 온도를 입력하세요: ");
+    scanf("%lf", &c);
+
+    f = ondo(c);
+
+    printf("화씨 온도: %.2f\n", f);
+
+    return 0;
+}
+
+double ondo(double c)
+{
+    return (9.0 / 5.0) * c + 32;
+}
