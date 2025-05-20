@@ -34,6 +34,14 @@ int isFull()
 void push(int value)
 {
     // 스택에 값을 넣는 코드
+    if (isFull() == 1)
+    {
+        printf("스택이 가득 찼습니다.");
+    }
+    else
+    {
+        soohyun[++top] = value;
+    }
 }
 
 int main()
@@ -43,8 +51,12 @@ int main()
     switch (number)
     {
     case 1:
-        printf("1");
+    {
+        int value; // case 바로 밑에 int 선언 할 수 없음 -> 중괄호로 감싸기
+        scanf("%d", &value);
+        push(value);
         break;
+    }
     case 2:
         printf("2");
         break;
