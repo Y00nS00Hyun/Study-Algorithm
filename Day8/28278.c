@@ -1,8 +1,11 @@
 #include <stdio.h>
 #define MAX_STACK_SIZE 100000
+// soohyun[0]~soohyun[99999]까지 100000개의 공간이 있다는 의미
 
 int soohyun[MAX_STACK_SIZE];
 int top = -1;
+// top: 맨 위의 인덱스 번호
+// soohyun[top]: 맨 위에 있는 값
 
 int isEmpty()
 {
@@ -14,6 +17,23 @@ int isEmpty()
     {
         printf("0");
     }
+}
+
+int isFull()
+{
+    if (top + 1 >= MAX_STACK_SIZE) // 꽉 찬 경우
+    {
+        return 1;
+    }
+    else // 아직 안 찬 경우
+    {
+        return 0;
+    }
+}
+
+void push(int value)
+{
+    // 스택에 값을 넣는 코드
 }
 
 int main()
