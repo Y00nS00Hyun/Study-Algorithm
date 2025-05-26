@@ -11,12 +11,15 @@ int isEmpty()
 {
     if (top < 0)
     {
-        printf("1");
+        printf("1"); // 빈 경우
+        return 1;
     }
     else
     {
         printf("0");
+        return 0;
     }
+    printf("\n");
 }
 
 int isFull()
@@ -44,33 +47,64 @@ void push(int value)
     }
 }
 
+void pop()
+{
+    if (isEmpty() == 1)
+    {
+        printf("-1");
+    }
+    else
+    {
+        printf("%d", soohyun[top]);
+        soohyun[top--];
+    }
+}
+
 int main()
 {
-    int number;
-    scanf("%d", &number);
-    switch (number)
+    int N;
+    scanf("%d", &N);
+    for (int i = 0; i < N; i++)
     {
-    case 1:
-    {
-        int value; // case 바로 밑에 int 선언 할 수 없음 -> 중괄호로 감싸기
-        scanf("%d", &value);
-        push(value);
-        break;
-    }
-    case 2:
-        printf("2");
-        break;
-    case 3:
-        printf("3");
-        break;
-    case 4:
-        isEmpty();
-        break;
-    case 5:
-        printf("5");
-        break;
 
-    default:
-        printf("잘못된 명령어를 입력하셨습니다.");
+        int number;
+        scanf("%d", &number);
+        switch (number)
+        {
+        case 1:
+        {
+            int value; // case 바로 밑에 int 선언 할 수 없음 -> 중괄호로 감싸기
+            scanf("%d", &value);
+            push(value);
+            break;
+        }
+        case 2:
+        {
+            pop();
+            break;
+        }
+        case 3:
+        {
+            int size = sizeof(soohyun) / sizeof(soohyun[0]);
+            printf("%d", size);
+            break;
+        }
+        case 4:
+            isEmpty();
+            break;
+        case 5:
+            printf("5");
+            break;
+
+        default:
+            printf("잘못된 명령어를 입력하셨습니다.");
+        }
+    }
+
+    printf("\n⭐ soohyun 배열의 내부 ⭐\n");
+
+    for (int i = 0; i < top + 1; i++)
+    {
+        printf("%d ", soohyun[i]);
     }
 }
