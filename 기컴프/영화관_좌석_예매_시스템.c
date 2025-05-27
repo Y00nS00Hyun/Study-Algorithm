@@ -5,7 +5,7 @@
 int main(void)
 {
     int seats[5][6];
-    int empty_seats;
+    int empty_seats = 0;
     srand(time(NULL));
 
     // 🍿
@@ -40,7 +40,7 @@ int main(void)
         printf("예매할 좌석을 입력하세요 (행 열)>> ");
         scanf("%d %d", &a, &b);
 
-        if ((a >= 1 && a <= 6) && (b >= 1 && b <= 7))
+        if ((a >= 1 && a <= 5) && (b >= 1 && b <= 6))
         {
             if (seats[a - 1][b - 1] == 1)
             {
@@ -53,9 +53,28 @@ int main(void)
                 success = 1;
             }
         }
-        else if (a < 1 || a > 6 || b < 1 || b > 7)
+        else
         {
             printf("잘못된 좌석 번호입니다. 다시 입력하세요.\n\n");
         }
     }
+
+    // 🍿
+    printf("🍿 현재 좌석 상태 (0: 빈 좌석, 1: 예약됨): \n");
+    printf("     1열 2열 3열 4열 5열 6열\n");
+
+    for (int i = 0; i < 5; i++)
+    {
+        printf("%d행 | ", i + 1);
+
+        for (int j = 0; j < 6; j++)
+        {
+            printf("%d | ", seats[i][j]);
+        }
+        printf("\n", i);
+    }
+    printf("빈 좌석 수: %d\n ", empty_seats);
+    // 🍿
+
+    return 0;
 }
