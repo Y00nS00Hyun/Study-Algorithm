@@ -1,1 +1,1 @@
-(double)
+for (int j = 0; j < 6; j++)
