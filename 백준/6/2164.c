@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define MAX_QUEUE_SIZE 500000
+#define MAX_QUEUE_SIZE 1000000
 
 int main()
 {
