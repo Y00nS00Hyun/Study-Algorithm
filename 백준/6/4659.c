@@ -5,7 +5,7 @@
 int ddaenggu(char soohyun[][20],int i){
     int value[26];
     int arr[20];
-    int firstkey=0;
+    int key=0;
     for (int j = 0; j < 26; j++) {
         value[j]=3;
     }
@@ -22,23 +22,27 @@ int ddaenggu(char soohyun[][20],int i){
         for (int k = 0; k < 20; k++) {
             arr[k]=soohyun[j][k]-'a';
             if(value[arr[k]]==1){
-                if(value[arr[k]]==value[arr[k+1]]&&value[arr[k]]==value[arr[k+2]]){
-                    if(arr[k]!=arr[k+1]){
-                        firstkey=0;
+                if(value[arr[k]]!=value[arr[k+1]]||value[arr[k+1]]!=value[arr[k+2]]){
+                    if(arr[k]!='e'||arr[k]!='o'){
+                       if(arr[k]!=arr[k+1]){
+                        key=0;
+                    }   
                     }
                 }
             }else{
-                firstkey=1;
+                key=1;
                
             }
         }
+
+        if(key==1){
+        printf("안돼");
+        }else{
+        printf("돼돼");
+        }
+        key=0;
     }
 
-    if(firstkey==1){
-    printf("안돼");
-    }else{
-    printf("돼돼");
-    }
 }
 
 
