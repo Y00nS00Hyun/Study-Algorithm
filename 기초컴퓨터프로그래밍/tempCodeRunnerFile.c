@@ -1,4 +1,4 @@
-else
-        {
-            printf("잘못된 좌석 번호입니다. 다시 입력하세요.\n\n");
-        }
+ // while (str[length] != '\0')
+    // {
+    //     length++;
+    // }
