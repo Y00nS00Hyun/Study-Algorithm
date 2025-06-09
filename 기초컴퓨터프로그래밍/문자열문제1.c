@@ -12,12 +12,16 @@ int main()
 
     // TODO. 문자열 길이 직접 계산
 
-    // while (str[length] != '\0')
-    // {
-    //     length++;
-    // }
-    length = strlen(str);
+    while (str[length] != '\0')
+    {
+        length++;
+    }
 
-    printf("문자열 길이: %d\n", length);
+    printf("역순출력: ");
+    for (int i = 0; i < length; i++)
+    {
+        printf("%c", str[length - i - 1]);
+    }
+
     return 0;
 }
