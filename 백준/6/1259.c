@@ -13,18 +13,18 @@ int main()
      while ((c=getchar())!='\n')
     {
         arr[i]=c;
-        i++;
+        i++; //i개
     }
-    i--;
-    
+
     if(arr[0]=='0'){
         break;
     }
 
     for (int j = 0; j < i/2; j++)
     {
-        if(arr[j]!=arr[i-j]){
+        if(arr[j]!=arr[i-1-j]){
             tf[s]=1;
+            break;
         }
     }
     i=0;
