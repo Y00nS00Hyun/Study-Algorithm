@@ -4,11 +4,11 @@
 #define MAX_QUEUE_SIZE 100001
 
 int soohyun[MAX_QUEUE_SIZE];
-int top = -1;
+int top = 0;
 
 int isEmpty()
 {
-    if (top < 0)
+    if (top == 0)
     {
         return 1;
     }
@@ -20,7 +20,7 @@ int isEmpty()
 
 void push(int value)
 {
-    soohyun[++top] = value;
+    soohyun[top++] = value;
 }
 
 void pop()
@@ -36,6 +36,7 @@ void pop()
         {
             soohyun[i] = soohyun[i + 1];
         }
+        top--;
     }
 }
 
@@ -51,32 +52,61 @@ int main()
 
         if (strcmp(A, "push") == 0)
         {
-            printf("1");
+            int value;
+            scanf("%d", &value);
+            push(value);
         }
         else if (strcmp(A, "pop") == 0)
         {
-            printf("1");
+            pop();
         }
         else if (strcmp(A, "size") == 0)
         {
-            printf("2");
+            printf("%d\n", top);
         }
         else if (strcmp(A, "empty") == 0)
         {
-            printf("3");
+            if (isEmpty() == 1)
+            {
+                printf("1\n");
+            }
+            else
+            {
+                printf("0\n");
+            }
         }
         else if (strcmp(A, "front") == 0)
         {
-            printf("4");
+            if (isEmpty() != 1)
+            {
+                printf("%d\n", soohyun[0]);
+            }
+            else
+            {
+                printf("-1");
+            }
         }
         else if (strcmp(A, "back") == 0)
         {
-            printf("5");
+            if (isEmpty() != 1)
+            {
+                printf("%d\n", soohyun[top - 1]);
+            }
+            else
+            {
+                printf("-1");
+            }
         }
         else
         {
-            printf("잘못입력하셨습니뿅");
+            printf("잘못입력하셨습니다\n");
         }
-        printf("\n");
+
+        // printf("큐: ");
+        // for (int i = 0; i < top; i++)
+        // {
+        //     printf("%d ", soohyun[i]);
+        // }
+        // printf("\n");
     }
 }

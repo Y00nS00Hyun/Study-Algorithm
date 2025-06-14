@@ -1,6 +1,6 @@
-for (int j = 0; j < i/2; j++)
-    {
-        if(arr[j]-'0'!=arr[i-j]-'0'){
-            printf("NO");
+printf("큐: ");
+        for (int i = 0; i < top; i++)
+        {
+            printf("%d ", soohyun[i]);
         }
-    }
+        printf("\n");
