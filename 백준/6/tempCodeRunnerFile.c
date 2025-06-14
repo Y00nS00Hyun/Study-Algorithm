@@ -1,6 +1,6 @@
-
-    if(firstkey==1){
-    printf("안돼");
-    }else{
-    printf("돼돼");
+for (int j = 0; j < i/2; j++)
+    {
+        if(arr[j]-'0'!=arr[i-j]-'0'){
+            printf("NO");
+        }
     }
