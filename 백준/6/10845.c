@@ -4,11 +4,12 @@
 #define MAX_QUEUE_SIZE 100001
 
 int soohyun[MAX_QUEUE_SIZE];
-int top = 0;
+int front = 0, rear = 0;
+// rear: 다음 데이터를 넣을 위치
 
 int isEmpty()
 {
-    if (top == 0)
+    if (front == rear)
     {
         return 1;
     }
@@ -20,7 +21,7 @@ int isEmpty()
 
 void push(int value)
 {
-    soohyun[top++] = value;
+    soohyun[rear++] = value;
 }
 
 void pop()
@@ -31,12 +32,7 @@ void pop()
     }
     else
     {
-        printf("%d\n", soohyun[0]);
-        for (int i = 0; i < top - 1; i++)
-        {
-            soohyun[i] = soohyun[i + 1];
-        }
-        top--;
+        printf("%d\n", soohyun[front++]);
     }
 }
 
@@ -62,7 +58,7 @@ int main()
         }
         else if (strcmp(A, "size") == 0)
         {
-            printf("%d\n", top);
+            printf("%d\n", rear - front);
         }
         else if (strcmp(A, "empty") == 0)
         {
@@ -79,22 +75,22 @@ int main()
         {
             if (isEmpty() != 1)
             {
-                printf("%d\n", soohyun[0]);
+                printf("%d\n", soohyun[front]);
             }
             else
             {
-                printf("-1");
+                printf("-1\n");
             }
         }
         else if (strcmp(A, "back") == 0)
         {
             if (isEmpty() != 1)
             {
-                printf("%d\n", soohyun[top - 1]);
+                printf("%d\n", soohyun[rear - 1]);
             }
             else
             {
-                printf("-1");
+                printf("-1\n");
             }
         }
         else
@@ -103,7 +99,7 @@ int main()
         }
 
         // printf("큐: ");
-        // for (int i = 0; i < top; i++)
+        // for (int i = 0; i < front; i++)
         // {
         //     printf("%d ", soohyun[i]);
         // }
