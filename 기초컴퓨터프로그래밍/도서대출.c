@@ -24,8 +24,11 @@ int main()
     int book_count = sizeof(books) / sizeof(books[0]);
     for (int i = 0; i < book_count; i++)
     {
-        printf("제목: %-20s 출판: %d 대출자: %-10s 기한: %d일\n",
-               books[i].title, books[i].year, books[i].borrower, books[i].due);
+        if (books[i].due < 3)
+        {
+            printf("제목: %-20s 출판: %d 대출자: %-10s 기한: %d일\n",
+                   books[i].title, books[i].year, books[i].borrower, books[i].due);
+        }
     }
 
     return 0;
