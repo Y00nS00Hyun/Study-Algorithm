@@ -1,6 +1,5 @@
-printf("큐: ");
-        for (int i = 0; i < top; i++)
-        {
-            printf("%d ", soohyun[i]);
-        }
-        printf("\n");
+    for (int i = 0; i < T; i++)
+    {
+        scanf("%d %d", &k, &n);
+        printf("%d\n", arr[k][n - 1]);
+    }
