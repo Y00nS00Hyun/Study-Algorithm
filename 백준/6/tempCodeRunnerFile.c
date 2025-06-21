@@ -1,1 +1,1 @@
-         printf("%d\n", soohyun[number - i]);
+
