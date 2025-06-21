@@ -3,23 +3,16 @@
 
 int main()
 {
-    int N;
-    scanf("%d", &N);
-    getchar(); // scanf 후 \n 이 남기 때문에 getchar 해서 제거해줘야함
-
+    int N, j;
     char T[1000];
-    char ch;
-    int j = 0;
+    scanf("%d", &N);
 
     for (int i = 0; i < N; i++)
     {
-        while ((ch = getchar()) != '\n')
-        {
-            T[j] = ch;
-            j++;
-        }
+        scanf("%d %s", &j, T);
+        int n = strlen(T);
 
-        for (int f = 0; f < j; f++)
+        for (int f = 0; f < n; f++)
         {
             for (int k = 0; k < j; k++)
             {
