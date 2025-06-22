@@ -2,24 +2,15 @@
 
 int main()
 {
-    int A, B, V;
-    int soohyun = 0;
-    int count = 0;
-
+    double A, B, V;
     scanf("%d %d %d", &A, &B, &V);
-    while (soohyun <= V)
+
+    double day = (V - B) / (A - B);
+
+    if (day - (int)day > 0)
     {
-        soohyun += A;
-        count++;
-        if (soohyun >= V)
-        {
-            break;
-        }
-        else
-        {
-            soohyun -= B;
-        }
+        day++;
     }
 
-    printf("%d", count);
+    printf("%d", (int)day);
 }
