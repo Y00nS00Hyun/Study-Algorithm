@@ -4,16 +4,16 @@
 int main()
 {
     int s, h = 0;
-    for (int i = 1; i < 51; i++)
+    for (int i = 1; i < 101; i += 2)
     {
-        s += 2 * i - 1;
+        s += i;
     }
 
     printf("%d\n", s);
 
-    for (int i = 1; i < 51; i++)
+    for (int i = 2; i < 101; i += 2)
     {
-        h += 2 * i;
+        h += i;
     }
 
     printf("%d", h);
