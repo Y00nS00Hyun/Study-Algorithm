@@ -5,12 +5,12 @@ void print_time_diff(int h1, int m1, int h2, int m2);
 
 int main()
 {
-    int h1, m1, h2, m2;
+    int a, b, c, d;
     printf("첫 번째 시각 입력(시:분)>> ");
-    scanf("%d:%d", &h1, &m1);
+    scanf("%d:%d", &a, &b);
     printf("두 번째 시각 입력(시:분)>> ");
-    scanf("%d:%d", &h2, &m2);
-    print_time_diff(h1, m1, h2, m2);
+    scanf("%d:%d", &c, &d);
+    print_time_diff(a, b, c, d);
     return 0;
 }
 
