@@ -6,7 +6,7 @@ int main()
     scanf("%d %d", &N, &M);
 
     int arr[100];
-    int brr[10000];
+    int brr[200000];
     int k = 0;
 
     for (int i = 0; i < N; i++)
