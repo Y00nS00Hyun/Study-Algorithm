@@ -30,38 +30,49 @@ int main()
     }
     qsort(drink, D, 4, compare);
 
+    int sum=0;
+
+    for (int i = 0; i < B; i++)
+    {
+        sum += burger[i];
+    }
+
+    for (int i = 0; i < C; i++)
+    {
+        sum += side[i];
+    }
+
+    for (int i = 0; i < D; i++)
+    {
+        sum += drink[i];
+    }
+
     int min = B;
     if(C<min) min=C;
     if (D<min) min=D;
 
-    printf("min : %d\n", min);
-
-    double sum=0;
+    double sum_discount=0;
     for (int i = 0; i < min; i++)
     {
-        sum += burger[i]+side[i]+drink[i];
-        printf("min까지의 %d 번째 sum: %f\n",i, sum);
+        sum_discount += burger[i]+side[i]+drink[i];
     }
-    sum = sum * 0.9;
-    printf("min까지의 sum: %f\n", sum);
+    sum_discount = sum_discount * 0.9;
     
     for (int i = min; i < B; i++)
     {
-        sum += burger[i];
+        sum_discount += burger[i];
     }
-    printf("min까지의 sum + burger: %f\n", sum);
 
     for (int i = min; i < C; i++)
     {
-        sum += side[i];
+        sum_discount += side[i];
     }
-    printf("min까지의 sum + side: %f\n", sum);
 
     for (int i = min; i < D; i++)
     {
-        sum += drink[i];
+        sum_discount += drink[i];
     }
-    printf("min까지의 sum + drink: %f\n", sum);
-    
-    printf("최종 : %f", sum);
+
+    printf("%d\n", sum);
+    printf("%d", (int)sum_discount);
 }
