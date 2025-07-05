@@ -2,27 +2,27 @@
 #include <stdlib.h>
 
 int compare(const void*a, const void*b){
-    return(*(long long*)a-*(long long*)b);
+    return(*(int*)a-*(int*)b);
 }
 
 int main()
 {
     int N;
-    long long *arr;
+    int *arr;
     scanf("%d", &N);
     
-    arr=(long long*)malloc(N*sizeof(long long));
+    arr=(int*)malloc(N*sizeof(int));
 
     for (int i = 0; i < N; i++)
     {
-    scanf("%lld", &arr[i]);
+    scanf("%d", &arr[i]);
     }
 
-    qsort(arr, N, sizeof(long long), compare);
+    qsort(arr, N, sizeof(int), compare);
     
     for (int i = 0; i < N; i++)
     {
-    printf("%lld ", arr[i]);
+    printf("%d ", arr[i]);
     }
 
     free(arr);
