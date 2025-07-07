@@ -9,6 +9,7 @@ struct member
     char name[101];
 };
 
+//👽
 int compare(const void *a, const void *b)
 {
     struct member *m1 = (struct member *)a;

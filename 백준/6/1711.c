@@ -7,6 +7,7 @@ typedef struct
     int y;
 } coordinate;
 
+//👽
 int compare(const void *a, const void *b)
 {
     const coordinate *p1 = (const coordinate *)a;
