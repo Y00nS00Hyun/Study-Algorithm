@@ -18,13 +18,7 @@ int main()
     printf("최대공약수: %d\n", small);
 
     // 최소공배수
-    int i=1;
-    while(1){
-        if((SS*i)%HH==0){
-            big=SS*i;
-            break;
-        }
-        i++;
-    }
+    big=SS*HH/S;
+    
     printf("최소공배수: %d\n", big);
 }
