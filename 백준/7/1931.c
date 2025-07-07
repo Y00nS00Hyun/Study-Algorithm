@@ -9,8 +9,11 @@ typedef struct{
 int compare(const void*a, const void*b){
     const Meeting *m1 = (const Meeting*)a;
     const Meeting *m2 = (const Meeting*)b;
-
-    return m1->end - m2->end;
+    
+    if (m1->end != m2->end)
+        return (m1->end > m2->end) ? 1 : -1; //end 오름차순 정렬
+    else
+        return (m1->start > m2->start) ? 1 : -1;
 }
 
 int main(){
@@ -25,19 +28,12 @@ int main(){
 
     qsort(meeting, N, sizeof(meeting[0]), compare);
 
-    printf("\n");
-    for (int i = 0; i < N; i++)
-    {
-         printf("%lld %lld\n", meeting[i].start, meeting[i].end);
-    }
-
-    int end_time=meeting[0].end;
+    long long end_time=meeting[0].end;
     for (int i = 1; i < N; i++)
     {
         if(meeting[i].start>=end_time){
             end_time=meeting[i].end;
             count++;
-            printf("end_time: %d count: %d\n",end_time,count);
         }
     }
     printf("%d",count);
