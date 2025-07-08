@@ -1,4 +1,4 @@
-// C언어에 안맞는 문제
+// C언어에 안맞는 문제 -> 파이썬으로 풀자
 
 #include <stdio.h>
 #include <math.h>
