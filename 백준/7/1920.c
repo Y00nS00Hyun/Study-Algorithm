@@ -11,31 +11,28 @@ int compare(const void *a, const void *b)
 
 int binary_search_tree(int key, int *arr, int size)
 {
-    while (1)
+    int left = 0;
+    int right = size - 1;
+
+    while (left <= right)
     {
-        if (size / 2 != 0)
+        int mid = (left + right) / 2;
+
+        if (key == arr[mid])
         {
-            if (key > *(arr + size / 2))
-            {
-                arr = arr + size / 2;
-                size = size / 2;
-            }
-            else if (key < *(arr + size / 2))
-            {
-                size = size / 2;
-            }
-            else
-            {
-                printf("1");
-                return 0;
-            }
+            return 1;
+        }
+        else if (key < arr[mid])
+        {
+            right = mid - 1;
         }
         else
         {
-            printf("0");
-            return 0;
+            left = mid + 1;
         }
     }
+
+    return 0;
 }
 
 int main()
@@ -56,6 +53,6 @@ int main()
     for (int i = 0; i < M; i++)
     {
         scanf("%d", &soohyun);
-        binary_search_tree(soohyun, arr, N);
+        printf("%d\n", binary_search_tree(soohyun, arr, N));
     }
 }
