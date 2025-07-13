@@ -1,31 +1,26 @@
 #include <stdio.h>
-#include <stdlib.h>
-
-int compare(const void *a, const void *b)
-{
-    int v1 = *(const int *)a;
-    int v2 = *(const int *)b;
-
-    return (v1 > v2) - (v1 < v2);
-}
 
 int main()
 {
-    int N, *arr;
+    int N, num, arr[10001];
     scanf("%d", &N);
-    arr = (int *)malloc(N * 4);
+
+    for (int i = 0; i < 10001; i++)
+    {
+        arr[i] = 0;
+    }
 
     for (int i = 0; i < N; i++)
     {
-        scanf("%d", &arr[i]);
+        scanf("%d", &num);
+        arr[num]++;
     }
 
-    qsort(arr, N, 4, compare);
-
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < 10001; i++)
     {
-        printf("%d\n", arr[i]);
+        for (int j = 0; j < arr[i]; j++)
+        {
+            printf("%d\n", i);
+        }
     }
-
-    free(arr);
 }
