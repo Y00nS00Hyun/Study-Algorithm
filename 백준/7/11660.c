@@ -26,6 +26,6 @@ int main(){
                 // printf("x: %d y: %d\n",j, k);
             }
         }
-        printf("%d",sum);
+        printf("👽 %d 👽",sum);
     }
 }
