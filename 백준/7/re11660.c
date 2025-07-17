@@ -21,10 +21,9 @@ int main(){
     {  
         scanf("%d %d %d %d", &x1, &y1, &x2, &y2);
         
-            for (int j = 0; j <= y2-y1; j++){
-            sum +=arr[N*(y2-1-j)+x2-1]-arr[N*(y2-1-j)+x1-2];
-            // printf("🥶arr[%d]-arr[%d]=%d🥶\n ",N*(y2-1-j)+x2-1,N*(y2-1-j)+x1-2,sum);
-        
+            for (int j = 0; j <= x2-x1; j++){
+            sum +=arr[N*(x2-1-j)+y2-1]-arr[N*(x2-1-j)+y1-2];
+            printf("🥶arr[%d]-arr[%d]=%d🥶\n ",N*(x2-1-j)+x2-1,N*(x2-1-j)+x1-2,sum);
         }
         
         printf("👽 %lld 👽",sum);
