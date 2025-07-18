@@ -17,6 +17,19 @@ int main() {
         scanf("%lld", &brr[i]);
     }
 
+    // ✅ 초기 상태 비교
+    for (int k = 1; k <= N; k++) {
+        if (arr[k] == brr[k]) {
+            soohyun++;
+        }
+    }
+
+    if (soohyun == N) {
+        printf("1");
+        return 0;
+    }
+    soohyun = 0;
+
     last = N;
 
     for (int i = 1; i <= N; i++) {
