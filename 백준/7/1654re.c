@@ -4,7 +4,7 @@ long long arr[1000000], brr[1000000];
 
 int main() {
     int K, N;
-    long long sum = 0, max, max_copy, real = 0;
+    long long sum = 0, max, max_copy, real = 0, answer;
     scanf("%d %d", &K, &N);
 
     for (int i = 0; i < K; i++) {
@@ -17,7 +17,7 @@ int main() {
 
     int start = 1, end = max;
 
-    while (start < end) {
+    while (start <= end) {
         real = 0;
         long long mid = (start + end) / 2;
 
@@ -29,23 +29,7 @@ int main() {
             end = mid - 1;
         } else {
             start = mid + 1;
-        }
-    }
-    long long test[3]={0};
-    long long answer=test[0];
-
-    for (int i = 0; i < 3; i++)
-    {
-        for (int j = 0; j < K; j++) {
-            test[i] += arr[j] / (start-i+1);
-        }
-
-        if(test[i]!=N){
-            test[i]=-1;
-        }
-        
-        if(test[i]>answer){
-            answer=start-i+1;
+            answer =mid;
         }
     }
       printf("%lld", answer);
