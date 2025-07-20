@@ -1,29 +1,15 @@
 #include <stdio.h>
-
-int soohyun(int N)
-{
-    int count = 0;
-    for (int i = 1; i <= N; i++)
-    {
-        if (N % i == 0)
-        {
-            count++;
-            // printf("i: %d\n", i);
-        }
-    }
-    // printf("count: %d\n", count);
-    return count * 2;
-}
+#include <math.h>
 
 int main()
 {
-    int T, N;
-    long long answer;
+    int T;
+    long long N, answer;
     scanf("%d", &T);
 
     for (int i = 0; i < T; i++)
     {
-        scanf("%d", &N);
+        scanf("%lld", &N);
 
         if (N % 2 == 1)
         {
@@ -32,15 +18,8 @@ int main()
         else
         {
             N = N / 2;
-            if (N % 2 == 1)
-            {
-                printf("4\n");
-            }
-            else
-            {
-                answer = soohyun(N);
-                printf("%lld\n", answer);
-            }
+            answer = pow(2, N);
+            printf("%lld\n", answer);
         }
     }
 }
