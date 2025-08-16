@@ -37,4 +37,11 @@ void main() {
   print(dictionary2);
   print(dictionary2.keys);
   print(dictionary2.values);
+
+  //Set -> 중복 처리 해줌
+  final Set<String> names = {'윤수현', '박수현', '이수현', '윤수현'};
+  print(names);
+  names.add('권수현');
+  names.remove('이수현');
+  print(names);
 }
