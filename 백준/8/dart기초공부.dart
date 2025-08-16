@@ -69,4 +69,26 @@ void main() {
   BloodType sungil = BloodType.A;
   BloodType soohyun = BloodType.B;
   BloodType soorim = BloodType.AB;
+
+  Numbers(1004);
+  merong(x: 202, y: 56532);
 }
+
+//숫자를 출력하는 함수
+Numbers(int x, [int y = 100]) {
+  //기본값
+  print('$x');
+}
+
+merong({required int x, required int y}) {
+  print('$x $y');
+}
+
+//1.
+int addNumbers(int x, {required int y, int z = 30}) {
+  int sum = x + y + z;
+  return sum;
+}
+
+//2. -> 둘이 같은 코드
+int addNumbers2(int x, {required int y, int z = 30}) => x + y + z;
