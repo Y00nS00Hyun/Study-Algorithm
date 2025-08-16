@@ -12,4 +12,29 @@ void main() {
   print(riize);
   riize.remove('수현');
   print(riize);
+
+  //Map
+  Map<String, String> dictionary = {
+    'Harry Potter': '해리포터',
+    'Wednesday': '웬즈데이',
+    'Conan': '코난',
+  };
+
+  Map<String, bool> dictionary2 = {
+    'Harry Potter': true,
+    'Wednesday': true,
+    'Conan': false,
+  };
+
+  dictionary2.addAll({'You': false, 'Me': true, 'We': true}); //여러 개 한 번에 추가
+  dictionary2['Joja'] = false;
+
+  print(dictionary);
+  print(dictionary2['You']);
+  print(dictionary2);
+
+  dictionary2.remove('Conan');
+  print(dictionary2);
+  print(dictionary2.keys);
+  print(dictionary2.values);
 }
