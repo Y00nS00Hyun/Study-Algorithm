@@ -1,3 +1,5 @@
+enum BloodType { A, B, AB, O }
+
 void main() {
   //List -> 배열인듯
   List<String> riize = ['수현', '원빈', '성찬'];
@@ -44,4 +46,27 @@ void main() {
   names.add('권수현');
   names.remove('이수현');
   print(names);
+
+  int total = 0;
+  List<int> number = [1, 10, 100, 1000, 10000];
+  for (var i = 0; i < number.length; i++) {
+    total += number[i];
+  }
+
+  print(total);
+
+  for (var a in number) {
+    print(a);
+  }
+
+  int total2 = 0;
+  for (var a in number) {
+    total2 += a;
+  }
+  print(total2);
+
+  //enum
+  BloodType sungil = BloodType.A;
+  BloodType soohyun = BloodType.B;
+  BloodType soorim = BloodType.AB;
 }
