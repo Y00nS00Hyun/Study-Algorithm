@@ -72,6 +72,12 @@ void main() {
 
   Numbers(1004);
   merong(x: 202, y: 56532);
+
+  int result1 = calculate(1, 2, add);
+  int result2 = calculate(1, 2, substract);
+
+  print(result1);
+  print(result2);
 }
 
 //숫자를 출력하는 함수
@@ -92,3 +98,10 @@ int addNumbers(int x, {required int y, int z = 30}) {
 
 //2. -> 둘이 같은 코드
 int addNumbers2(int x, {required int y, int z = 30}) => x + y + z;
+
+typedef Operation = int Function(int x, int y);
+int add(int x, int y) => x + y;
+int substract(int x, int y) => x - y;
+int calculate(int x, int y, Operation operation) {
+  return operation(x, y);
+}
