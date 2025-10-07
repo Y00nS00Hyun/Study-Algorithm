@@ -1,4 +1,4 @@
-for _ in range(int(input())): #input회 만큼 진행 -> range 안에는 숫자
+for _ in range(int(input())): #input회 만큼 진행 -> range 는 숫자 담는 함수
     soohyun=list(map(int, input().split())) #soohyun list 에 담기
     even=[] #짝수 배열 만들기
     for n in soohyun: #n회동안 soohyun list 에서
