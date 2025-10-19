@@ -1,0 +1,42 @@
+
+create table BOOK(
+Book_id char(15) not null,
+Title varchar(100) not null,
+Publisher_name varchar(100),
+
+primary key (Book_id),
+foreign key(Publisher_name) references Publisher(Name),
+	on delete cascade on update cascade);
+
+create table Book_Authors(
+Book_id char(15) not null,
+Author_name varchar(50) not null,
+
+primary key (Book_id),
+foreign key (Book_id) references Book(Book_id),
+	on update cascade on delete cascade);
+    
+create table publisher (
+Name varchar(50) not null,
+Address varchar(100) not null,
+Phone varchar(20),
+
+primary key(Name));
+
+create table Book_Copies(
+Book_id varchar(500) not null,
+Branch_id char(10) not null,
+NO_of_copies INT not null,
+primary key (Book_id, Branch_id),
+
+foreign key (Book_id) references Book(Book_id),
+	on update cascade on delete cascade,
+foreign key (Branch_id) references Book(Book_id),
+	on update cascade on delete cascade
+);
+
+select E.Fname, E.Lname
+from Emplyee as E
+where E.Supper_ssn=E.SSn;
+    
+    
