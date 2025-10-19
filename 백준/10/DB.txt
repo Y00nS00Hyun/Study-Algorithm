@@ -39,4 +39,10 @@ select E.Fname, E.Lname
 from Emplyee as E
 where E.Supper_ssn=E.SSn;
     
-    
+Exercise3.
+a.
+
+select Employee.Fname, Employee.Minit, Employee.Lname
+from Employee, Works_on, Project
+where Project.Dnum = 5, Project.Pname = "ProductX", Work_on.Hours>10,
+      Employee.SSn=Work_on.Essn, Employee.Dno=Project.Dnum
