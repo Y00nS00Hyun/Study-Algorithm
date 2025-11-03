@@ -1,4 +1,5 @@
 N, M = map(int, input().split())
+# 히히
 
 A = [list(map(int, input().strip())) for _ in range(N)]
 B = [list(map(int, input().strip())) for _ in range(N)]
