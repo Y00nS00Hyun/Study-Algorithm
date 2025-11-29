@@ -1,9 +1,7 @@
 # N = int(input())
 # M = input()
 # print(f"{N}번입니다.{M}")
-
 N = int(input())
-count = 0
 
 for _ in range(N):
     stack = []
@@ -16,11 +14,9 @@ for _ in range(N):
                 stack.pop()
             else:
                 print("NO")
-                count = 1
                 break
-    if (count == 0):
+    else:
         if stack:
             print("NO")
         else:
             print("YES")
-    count = 0
