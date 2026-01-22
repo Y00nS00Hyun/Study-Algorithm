@@ -17,6 +17,7 @@ for i in range(Min, Max+1):
         for v in row:
             if v > i:
                 count += 2*(v-i)
+                BB += v-i
             elif v < i:
                 count += i-v
                 BB -= i-v
