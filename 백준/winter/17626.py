@@ -17,5 +17,7 @@ for i in range(2, N+1):
         # DP[i] = min(DP[i], DP[j*j]+DP[i-j*j])
         DP[i] = min(DP[i], 1+DP[i-j*j])
         j += 1
+        if DP[i] == 2:
+            break
 
 print(DP[N])
