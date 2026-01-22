@@ -14,7 +14,8 @@ for i in range(2, N+1):
         continue
     j = 1
     while j*j < i:
-        DP[i] = min(DP[i], DP[j*j]+DP[i-j*j])
+        # DP[i] = min(DP[i], DP[j*j]+DP[i-j*j])
+        DP[i] = min(DP[i], 1+DP[i-j*j])
         j += 1
 
 print(DP[N])
