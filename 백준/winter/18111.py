@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 N, M, B = map(int, input().split())
 
 Land = [list(map(int, input().split())) for _ in range(N)]
@@ -17,10 +20,10 @@ for i in range(Min, Max+1):
             elif v < i:
                 count += i-v
                 BB -= i-v
-
-    if BB < 0:
-        SH[i] = -1
-    else:
+    if BB >= 0:
         SH[i] = count
 
-print(min(x for x in SH[Min:Max+1] if x > 0))
+value, idx = min((x, -i)
+                 for i, x in enumerate(SH[Min:Max+1], start=Min) if x >= 0)
+
+print(value, -idx)
