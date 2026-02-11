@@ -18,13 +18,13 @@ for i in range(Min, Max+1):
             if v > i:
                 count += 2*(v-i)
                 BB += v-i
-            elif v < i:
+            else:  # elif 보다 훨씬 빠름
                 count += i-v
                 BB -= i-v
     if BB >= 0:
         SH[i] = count
 
-value, idx = min((x, -i)
+value, idx = min((x, -i)  # 충격: -를 붙이면 큰 수를 구할 수 있다
                  for i, x in enumerate(SH[Min:Max+1], start=Min) if x >= 0)
 
 print(value, -idx)
