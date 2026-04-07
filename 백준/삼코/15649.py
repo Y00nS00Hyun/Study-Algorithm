@@ -1,24 +1,21 @@
 N, M = list(map(int, input().split()))
-arr = [False]*N
+visited = [False]*(N+1)
+result = []
 
 
-def soohyun(depth, now):
-
+def soohyun(depth):
     if depth == M:
-        for k in range(i, N):
-            if arr[k] == True:
-                print(k+1, end=" ")
-        for k in range(0, i):
-            if arr[k] == True:
-                print(k+1, end=" ")
-        print("")
+        print(*(result))  # 리스트 원소들을 공백으로 구분해 출력
+        return
 
-    for i in range(N):
-        if arr[i] == False:
-            arr[i] = True
-           # print(arr)
-            soohyun(depth + 1, i+1)
-            arr[i] = False
+    for i in range(1, N+1):
+        if visited[i] == False:
+            visited[i] = True
+            result.append(i)
+            soohyun(depth + 1)
+
+            result.pop()
+            visited[i] = False
 
 
-soohyun(0, 0)
+soohyun(0)
