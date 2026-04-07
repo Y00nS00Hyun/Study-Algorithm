@@ -1,3 +1,5 @@
-arr = [[0]*10 for _ in range(2)]
+N = 8
 
-print(arr)
+for i in range(int(N/2)-1):
+    for j in range(i+1, int(N/2)):
+        print(i, j)
