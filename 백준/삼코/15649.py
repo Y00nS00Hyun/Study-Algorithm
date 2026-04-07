@@ -3,10 +3,14 @@ arr = [False]*N
 
 
 def soohyun(depth, now):
+
     if depth == M:
-        for i in range(M):
-            if arr[i] == True:
-                print(i+1, end=" ")
+        for k in range(i, N):
+            if arr[k] == True:
+                print(k+1, end=" ")
+        for k in range(0, i):
+            if arr[k] == True:
+                print(k+1, end=" ")
         print("")
 
     for i in range(N):
