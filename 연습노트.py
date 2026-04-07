@@ -1,5 +1,5 @@
-N = 8
+arr = [False, False, True, True, True]
 
-for i in range(int(N/2)-1):
-    for j in range(i+1, int(N/2)):
-        print(i, j)
+for i in range(len(arr)):
+    if arr[i] == True:
+        print(i+1, end=' ')  # 줄바꿈 방지
