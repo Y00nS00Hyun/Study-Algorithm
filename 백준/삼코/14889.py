@@ -2,7 +2,7 @@ N = int(input())
 S = [list(map(int, input().split())) for _ in range(N)]
 
 player = [False]*N
-# player[0] = True  # 중복 제거
+player[0] = True  # 중복 제거
 scoreDifference = float('inf')  # 무한대
 
 
@@ -10,6 +10,9 @@ def dfs(depth, start):
     global scoreDifference
     if depth == N//2:  # 몫 연산
         scoreDifference = min(scoreDifference, calc())
+        if scoreDifference == 0:
+            print(0)
+            exit()
         return
 
     for i in range(start, N):
@@ -40,5 +43,5 @@ def calc():
     return abs(start_score-link_score)  # 절댓값
 
 
-dfs(0, 0)
+dfs(1, 1)
 print(scoreDifference)
