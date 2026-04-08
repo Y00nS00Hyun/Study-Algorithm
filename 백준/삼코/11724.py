@@ -5,7 +5,6 @@ count = 0
 
 
 def dfs(v):
-    global count
     for j in range(M):
         if line[j][0] == v and point[line[j][1]] == False:
             point[line[j][1]] = True
