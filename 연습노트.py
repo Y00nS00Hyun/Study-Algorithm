@@ -1,5 +1,2 @@
-arr = [False, False, True, True, True]
-
-for i in range(len(arr)):
-    if arr[i] == True:
-        print(i+1, end=' ')  # 줄바꿈 방지
+arr = [[1, 2], [3, 4], [5, 6]]
+print(arr[0][1])
